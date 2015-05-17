@@ -9,7 +9,7 @@ namespace NoClipNoVirus
 {
     public static class Globals
     {
-        private static bool VSBuild = true; //true on debug only!!!
+        private static bool VSBuild = false; //true on debug only!!!
         public static Structs.SetupFile MainSettings { get; set; }
         public static Keys ActivateKey { get; set; }
         public static Keys SpeedUpKey { get; set; }
@@ -44,22 +44,29 @@ namespace NoClipNoVirus
             else
             {
                 //ON RELEASE BUILD ONLY!!
-                //CAN'T DO THIS YET. 
-                string settingsFileName = "../../noclip_settings.txt";
+                string settingsFileName = "scripts/noclip_settings.txt";
+                string settingsData = "IyBEZWZhdWx0IENvbnRyb2wgU2V0dXANCiMga2V5IGRvY3M6IGh0dHBzOi8vbXNkbi5taWNyb3NvZnQuY29tL2VuLXVzL2xpYnJhcnkvc3lzdGVtLndpbmRvd3MuZm9ybXMua2V5cyUyOHY9dnMuMTEwJTI5LmFzcHgNCiMgWEJMVG9vdGhQaWsNCiMgTm9DbGlwTm9WaXJ1cw0KDQouS2V5cw0KQWN0aXZhdGUgPSBOdW1QYWQwDQpVcFNwZWVkID0gTnVtUGFkMg0KRG93blNwZWVkID0gTnVtUGFkMQ0KTW92ZVVwID0gTFNoaWZ0S2V5DQpNb3ZlRG93biA9IExDb250cm9sS2V5";
+                byte[] settingsDataBytes = Convert.FromBase64String(settingsData);
                 if (File.Exists(settingsFileName))
                     setupIn = File.Open(settingsFileName, FileMode.Open, FileAccess.Read, FileShare.Read);
                 else
                 {
+                    //Writing default settings file, base64 encoded
                     setupIn = File.Create(settingsFileName);
-                    Stream defaultStream = File.Open("../Resources/DefaultControlSetup.txt", FileMode.Open);
-                    defaultStream.CopyTo(setupIn);
-                    setupIn.Flush();
-                    setupIn.Seek(0, SeekOrigin.Begin);
+                    System.IO.BinaryWriter Writer = new System.IO.BinaryWriter(setupIn);
+                    Writer.BaseStream.Position = 0;
+
+                    Writer.Write(settingsDataBytes, 0, settingsDataBytes.Length);
+                    
+                    Writer.Flush();
+                    Writer.BaseStream.Seek(0, SeekOrigin.Begin);
+   
                 }
-            }
+
+            };
             MainSettings = new Structs.SetupFile(setupIn);
             setupIn.Close();
-
+            
             ActivateKey = MainSettings.GetEntryByName("Keys", "Activate").KeyValue;
             SpeedUpKey = MainSettings.GetEntryByName("Keys", "UpSpeed").KeyValue;
             SpeedDownKey = MainSettings.GetEntryByName("Keys", "DownSpeed").KeyValue;
