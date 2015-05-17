@@ -1,0 +1,5 @@
+c:\users\carlos\documents\visual studio 2013\Projects\NoClipNoVirus\NoClipNoVirus\bin\Debug\NoClipNoVirus.dll
+c:\users\carlos\documents\visual studio 2013\Projects\NoClipNoVirus\NoClipNoVirus\bin\Debug\NoClipNoVirus.pdb
+c:\users\carlos\documents\visual studio 2013\Projects\NoClipNoVirus\NoClipNoVirus\bin\Debug\ScriptHookVDotNet.dll
+c:\users\carlos\documents\visual studio 2013\Projects\NoClipNoVirus\NoClipNoVirus\obj\Debug\NoClipNoVirus.dll
+c:\users\carlos\documents\visual studio 2013\Projects\NoClipNoVirus\NoClipNoVirus\obj\Debug\NoClipNoVirus.pdb

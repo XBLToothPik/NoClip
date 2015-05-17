@@ -1,0 +1,6 @@
+c:\users\carlos\documents\visual studio 2013\Projects\NoClipNoVirus\NoClipNoVirus\bin\Release\NoClipNoVirus.dll
+c:\users\carlos\documents\visual studio 2013\Projects\NoClipNoVirus\NoClipNoVirus\bin\Release\NoClipNoVirus.pdb
+c:\users\carlos\documents\visual studio 2013\Projects\NoClipNoVirus\NoClipNoVirus\bin\Release\ScriptHookVDotNet.dll
+c:\users\carlos\documents\visual studio 2013\Projects\NoClipNoVirus\NoClipNoVirus\obj\Release\NoClipNoVirus.dll
+c:\users\carlos\documents\visual studio 2013\Projects\NoClipNoVirus\NoClipNoVirus\obj\Release\NoClipNoVirus.pdb
+C:\Users\Carlos\documents\visual studio 2013\Projects\NoClipNoVirus\NoClipNoVirus\obj\Release\NoClipNoVirus.csprojResolveAssemblyReference.cache
